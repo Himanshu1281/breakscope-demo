@@ -38,11 +38,10 @@ components:
   schemas:
     User:
       type: object
-      required: [id, full_name, email, status]
+      required: [id, full_name, status]
       properties:
         id: {type: integer}
         full_name: {type: string}
-        email: {type: string, format: email}
         status: {type: string, enum: [active, disabled]}
     NewUser:
       type: object
