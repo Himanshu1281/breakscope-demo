@@ -1,5 +1,5 @@
 openapi: 3.0.3
-info: {title: Demo Users API, version: 1.0.0}
+info: {title: Demo Users API, version: 2.0.0}
 paths:
   /users:
     get:
@@ -23,36 +23,30 @@ paths:
           content:
             application/json:
               schema: {$ref: "#/components/schemas/User"}
-  /users/{id}:
+  /users/{userId}:
     get:
       operationId: getUser
       parameters:
-        - {name: id, in: path, required: true, schema: {type: integer}}
+        - {name: userId, in: path, required: true, schema: {type: integer}}
       responses:
         "200":
           description: One user
           content:
             application/json:
               schema: {$ref: "#/components/schemas/User"}
-    delete:
-      operationId: deleteUser
-      parameters:
-        - {name: id, in: path, required: true, schema: {type: integer}}
-      responses:
-        "204": {description: Deleted}
 components:
   schemas:
     User:
       type: object
-      required: [id, name, email, status]
+      required: [id, full_name, email, status]
       properties:
         id: {type: integer}
-        name: {type: string}
+        full_name: {type: string}
         email: {type: string, format: email}
-        status: {type: string, enum: [active, pending, disabled]}
+        status: {type: string, enum: [active, disabled]}
     NewUser:
       type: object
-      required: [name]
+      required: [full_name, email]
       properties:
-        name: {type: string}
+        full_name: {type: string}
         email: {type: string, format: email}
