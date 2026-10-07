@@ -1,0 +1,5 @@
+# BreakScope configuration: https://github.com/Himanshu1281/breakscope
+spec: api/openapi.yaml
+base: origin/main
+fail-on: high
+min-confidence: medium
