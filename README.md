@@ -6,3 +6,5 @@ A test repository for the [BreakScope](https://github.com/Himanshu1281/breakscop
 - `change-api` changes the spec: `User.name` becomes `full_name`, `DELETE /users/{id}` is removed, and `email` becomes required on `POST /users`.
 
 Open a pull request from `change-api` into `main` to see the report.
+
+Last run triggered: 2026-10-07T12:21Z
